@@ -96,8 +96,8 @@ def generate_launch_description():
         package='pointcloud_preprocessor',
         plugin='pointcloud_preprocessor::CropBoxFilterComponent',
         name='crop_box_filter_self',
-        remappings=[('/input', 'pointcloud_raw_ex'),
-                    ('/output', 'self_cropped/pointcloud_ex')
+        remappings=[('input', 'pointcloud_raw_ex'),
+                    ('output', 'self_cropped/pointcloud_ex')
                     ] + cropbox_remappings,
         parameters=[cropbox_parameters],
     )
@@ -107,8 +107,8 @@ def generate_launch_description():
         package='pointcloud_preprocessor',
         plugin='pointcloud_preprocessor::CropBoxFilterComponent',
         name='crop_box_filter_mirror',
-        remappings=[('/input', 'self_cropped/pointcloud_ex'),
-                    ('/output', 'mirror_cropped/pointcloud_ex'),
+        remappings=[('input', 'self_cropped/pointcloud_ex'),
+                    ('output', 'mirror_cropped/pointcloud_ex'),
                     ] + cropbox_remappings,
         parameters=[cropbox_parameters],
     )
@@ -133,8 +133,8 @@ def generate_launch_description():
         plugin='pointcloud_preprocessor::RingOutlierFilterComponent',
         name='ring_outlier_filter',
         remappings=[
-            ('/input', 'rectified/pointcloud_ex'),
-            ('/output', 'outlier_filtered/pointcloud')
+            ('input', 'rectified/pointcloud_ex'),
+            ('output', 'outlier_filtered/pointcloud')
         ],
     )
     )
